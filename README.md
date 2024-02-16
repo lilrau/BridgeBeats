@@ -25,6 +25,8 @@ $ pip install pillow
 ## Important
 This tool was created to solve my problem with my playlists across different music apps. I'm gradually trying to expand it so that everyone can use it.
 
+API ID and Secret missing.
+
 ## Screenshots
 <img src="https://i.imgur.com/ElI7wYC.png">
 <br>
