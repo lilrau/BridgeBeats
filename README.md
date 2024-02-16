@@ -13,6 +13,15 @@ At this time we only support <img height="13" width="13" src="https://cdn-icons-
 3. Press the convert button
 4. Wait for the magic ✨
 
+## Libs
+```
+$ pip install tk 
+$ pip install customtkinter
+$ pip install spotipy
+$ pip install youtube_dl
+$ pip install pillow
+```
+
 ## Important
 This tool was created to solve my problem with my playlists across different music apps. I'm gradually trying to expand it so that everyone can use it.
 
