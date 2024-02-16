@@ -76,7 +76,7 @@ convertButton = customtkinter.CTkButton(root, text="Convert", command=convert, f
 convertButton.pack(padx=10, pady=10)
 
 # Add logo
-logo_loc = "D:/backup novo/Scripts/python/beatbridge/gui/assets/bridgebeats.jpg"
+logo_loc = "gui/assets/bridgebeats.jpg"
 logo = Image.open(logo_loc)
 logo = logo.resize((130, 130))
 logo = ImageTk.PhotoImage(logo)

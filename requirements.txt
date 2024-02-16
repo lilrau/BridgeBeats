@@ -1,0 +1,4 @@
+customtkinter
+spotipy
+youtube_dl
+pillow

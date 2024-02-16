@@ -14,8 +14,12 @@ At this time we only support <img height="13" width="13" src="https://cdn-icons-
 4. Wait for the magic ✨
 
 ## Libs
+The best way is
 ```
-$ pip install tk 
+$ pip install -r requirements.txt
+```
+But you can
+```
 $ pip install customtkinter
 $ pip install spotipy
 $ pip install youtube_dl
