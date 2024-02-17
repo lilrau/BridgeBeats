@@ -37,7 +37,7 @@ def create_youtube_playlist(spotify_playlist_url, youtube_playlist_name):
         creds = InstalledAppFlow.from_client_secrets_file(
             'ytb_credentials/client_secret.json', SCOPES).run_local_server(port=0)
 
-    # Construa o serviço YouTube API usando as credenciais
+    # Build Youtube API service using the credentials
     youtube = googleapiclient.discovery.build('youtube', 'v3', credentials=creds)
 
     # Create YouTube playlist

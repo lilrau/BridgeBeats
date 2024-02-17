@@ -1,5 +1,5 @@
 import tkinter as tk
-from tkinter import Scrollbar, messagebox
+from tkinter import Scrollbar
 import customtkinter
 from controller import getter
 from PIL import Image, ImageTk
@@ -37,6 +37,7 @@ def convert():
 
     threading.Thread(target=show_popup).start()
 
+    # Calling the right function
     playlist_url = url.get()
     if "youtube.com" in playlist_url:
         spotify_playlist_name = extract_ytb_playlist_name(playlist_url)
@@ -61,7 +62,7 @@ root.title("BridgeBeats - Your music playlist converter!")
 font = customtkinter.CTkFont(family="Cascadia Code PL")
 title = customtkinter.CTkLabel(root, text="Insert a YouTube/Spotify link to get started!", font=font)
 title.pack()
-subtitle = customtkinter.CTkLabel(root, text="BETA TEST WARNING: This tool is in development stage. API bugs still happening :(", font=font, text_color="#303030")
+subtitle = customtkinter.CTkLabel(root, text="BETA WARNING: YouTube API is limiting requests :(", font=font, text_color="#303030")
 subtitle.pack()
 
 # Link Input

@@ -33,6 +33,8 @@ $ pip install google-api-python-client
 ## Important
 This tool was created to solve my problem with my playlists across different music apps. I'm gradually trying to expand it so that everyone can use it.
 
+⚠️ The YouTube API has an annoying quota system that severely limits the number of requests the tool can make. I'm trying to find a solution to this, but I wonder if there is one. If you know of anything, please contact me.
+
 APIs ID and Secret missing for obvious reasons.
 
 ## Screenshots
