@@ -5,7 +5,7 @@ A tool to convert playlists between different music streaming platforms, e.g. if
 
 ## Supported Platforms 
 
-At this time we only support <img height="13" width="13" src="https://cdn-icons-png.flaticon.com/256/1384/1384060.png"/> YouTube  ➜ <img height="13" width="13" src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/84/Spotify_icon.svg/1982px-Spotify_icon.svg.png"/> Spotify conversions.
+At this time we only support <img height="13" width="13" src="https://cdn-icons-png.flaticon.com/256/1384/1384060.png"/> YouTube  ⮀ <img height="13" width="13" src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/84/Spotify_icon.svg/1982px-Spotify_icon.svg.png"/> Spotify conversions.
 
 ## Usage
 1. Paste the playlist URL in the input field
@@ -24,18 +24,18 @@ $ pip install customtkinter
 $ pip install spotipy
 $ pip install youtube_dl
 $ pip install pillow
+$ pip install google-auth
+$ pip install google-auth-oauthlib
+$ pip install google-auth-httplib2
+$ pip install google-api-python-client
 ```
 
 ## Important
 This tool was created to solve my problem with my playlists across different music apps. I'm gradually trying to expand it so that everyone can use it.
 
-API ID and Secret missing.
+APIs ID and Secret missing for obvious reasons.
 
 ## Screenshots
-<img src="https://i.imgur.com/ElI7wYC.png">
-<br>
-<br>
-<img src="https://i.imgur.com/b9PoNMH.png">
-<br>
-<br>
-<img src="https://i.imgur.com/l7bdv38.png">
+<img src="https://i.imgur.com/jAiAgsL.png">
+
+

@@ -1,2 +1,5 @@
 # Remove the access token for account
 *.cache
+
+dist/
+ytb_credentials/

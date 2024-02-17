@@ -1,10 +1,12 @@
 import tkinter as tk
-from tkinter import Scrollbar
+from tkinter import Scrollbar, messagebox
 import customtkinter
 from controller import getter
 from PIL import Image, ImageTk
-from controller.spotCreator import extract_playlist_name, create_spotify_playlist
+from controller.spotCreator import extract_ytb_playlist_name, create_spotify_playlist
+from controller.ytbCreator import extract_spotify_playlist_name, create_youtube_playlist
 from gui.colors import colored_text, ConsoleColors
+import threading
 
 # Functions
 def getTracks():
@@ -16,7 +18,7 @@ def getTracks():
         tracks = getter.get_spotify_tracks(playlist_url)
         print(f"{colored_text('Spotify', ConsoleColors.BACKGROUND_GREEN)} playlist found! {len(tracks)} tracks imported.")
     else:
-        tracks = []
+        print("Invalid URL. Please enter a valid YouTube or Spotify playlist URL.")
 
     # Clear list
     listbox.delete(0, tk.END)
@@ -29,9 +31,22 @@ def getTracks():
             listbox.insert(tk.END, f"{index}. {track['title']}")
             
 def convert():
+    # Show pop-up
+    def show_popup():
+        tk.messagebox.showinfo("Converting", "The process is ongoing. Check the console for more information or please wait...")
+
+    threading.Thread(target=show_popup).start()
+
     playlist_url = url.get()
-    spotify_playlist_name = extract_playlist_name(playlist_url)
-    create_spotify_playlist(playlist_url, spotify_playlist_name)
+    if "youtube.com" in playlist_url:
+        spotify_playlist_name = extract_ytb_playlist_name(playlist_url)
+        threading.Thread(target=create_spotify_playlist, args=(playlist_url, spotify_playlist_name)).start()
+    elif "spotify.com" in playlist_url:
+        youtube_playlist_name = extract_spotify_playlist_name(playlist_url)
+        threading.Thread(target=create_youtube_playlist, args=(playlist_url, youtube_playlist_name)).start()
+    else:
+        print("Invalid URL. Please enter a valid YouTube or Spotify playlist URL.")
+        
 
 # System settings
 customtkinter.set_appearance_mode("dark")
@@ -46,7 +61,7 @@ root.title("BridgeBeats - Your music playlist converter!")
 font = customtkinter.CTkFont(family="Cascadia Code PL")
 title = customtkinter.CTkLabel(root, text="Insert a YouTube/Spotify link to get started!", font=font)
 title.pack()
-subtitle = customtkinter.CTkLabel(root, text="BETA TEST WARNING: Only Youtube ➜ Spotify conversion working. Bugs happening in huge playlists :(", font=font, text_color="#303030")
+subtitle = customtkinter.CTkLabel(root, text="BETA TEST WARNING: This tool is in development stage. API bugs still happening :(", font=font, text_color="#303030")
 subtitle.pack()
 
 # Link Input

@@ -2,3 +2,7 @@ customtkinter
 spotipy
 youtube_dl
 pillow
+google-auth
+google-auth-oauthlib
+google-auth-httplib2
+google-api-python-client

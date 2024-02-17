@@ -5,7 +5,7 @@ from controller import getter
 from secret.credentials import Credentials
 from gui.colors import colored_text, ConsoleColors
 
-def extract_playlist_name(youtube_playlist_url):
+def extract_ytb_playlist_name(youtube_playlist_url):
     # Extract playlist name from YouTube URL
     with youtube_dl.YoutubeDL({}) as ydl:
         info = ydl.extract_info(youtube_playlist_url, download=False)
@@ -19,7 +19,7 @@ def create_spotify_playlist(youtube_playlist_url, spotify_playlist_name):
         return
 
     # Extract original playlist name
-    original_playlist_name = extract_playlist_name(youtube_playlist_url)
+    original_playlist_name = extract_ytb_playlist_name(youtube_playlist_url)
     
     # Sign the description
     description = f"This '{original_playlist_name}' playlist was created by BridgeBeats. For more, visit github.com/lilrau."
